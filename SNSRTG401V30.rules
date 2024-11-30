@@ -1,0 +1,90 @@
+
+(rules PCB SNSRTG401V20
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 27689)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+  )
+  (rule
+    (width 150.0)
+    (clearance 150.2)
+    (clearance 75.0 (type smd_to_turn_gap))
+    (clearance 150.2 (type smd))
+    (clearance 150.2 (type "kicad_default"))
+    (clearance 150.2 (type kicad))
+  )
+  (padstack "Via[0-1]_400:200_um"
+    (shape
+      (circle F.Cu 400.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 400.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_400:200_um" "Via[0-1]_400:200_um" default
+  )
+  (via 
+    "Via[0-1]_400:200_um-kicad_default" "Via[0-1]_400:200_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_400:200_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_400:200_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 150.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    NRST "Net-(R10-Pad2)" GND "Net-(U1-BP)" RXD1 TXD1 +3.3V 5VINP
+    "Net-(R1-Pad2)" "Net-(R2-Pad2)" TRG01 TRG02 "I2C1-SCL" "I2C1-SDA" TXD2 RXD2
+    "SPI1-NSS1" "SPI1-SCK" "SPI1-MISO" "SPI1-MOSI" EXINT1 EXINT2 "SPI1-NSS2" "SPI1-NSS3"
+    "IM-DATA" "IM-CLK" "IM-L{slash}R" "Net-(MK1-DATA)" SWDIO SWCLK +5V "Net-(U2-BP)"
+    "unconnected-(U6-SDO-Pad6)" GPLED2 BNRST "Net-(D1-A)" "Net-(D2-A)" GPLED1 "Net-(D3-A)" "Net-(U8-VREF+)"
+    "Net-(U8-VCAP1)" "Net-(U11-REGOUT)" "Net-(U8-BOOT0)" "CLK-EN" "Net-(U8-PC14)" "unconnected-(U8-PC15-Pad4)" "Net-(U8-PH0)" "unconnected-(U8-PH1-Pad6)"
+    "unconnected-(U8-PA4-Pad14)" "unconnected-(U8-PB2-Pad20)" "unconnected-(U8-PB14-Pad27)" "unconnected-(U8-PA11-Pad32)" "unconnected-(U8-PB5-Pad41)" 5VENBL "unconnected-(U13-EP-Pad9)" "unconnected-(U11-NC-Pad2)"
+    "unconnected-(U11-NC-Pad3)" "unconnected-(U11-NC-Pad4)" "unconnected-(U11-NC-Pad5)" "unconnected-(U11-NC-Pad6)" "unconnected-(U11-AUX_CL-Pad7)" "unconnected-(U11-FSYNC-Pad11)" "unconnected-(U11-NC-Pad14)" "unconnected-(U11-NC-Pad15)"
+    "unconnected-(U11-NC-Pad16)" "unconnected-(U11-NC-Pad17)" "unconnected-(U11-RESV_19-Pad19)" "unconnected-(U11-AUX_DA-Pad21)" "unconnected-(U11-EXP-Pad25)" "Net-(J8-Pin_1)" "Net-(J8-Pin_2)" "Net-(J8-Pin_3)"
+    "Net-(J8-Pin_4)" VBAT "Net-(D4-K)" "Net-(D4-A)" "Net-(U5-PROG)" "unconnected-(U12-RES-Pad11)" "unconnected-(U12-NC-Pad10)" "unconnected-(U12-INT2-Pad9)"
+    "unconnected-(U12-RES-Pad3)" STATUS "unconnected-(J9-Pin_9-Pad9)" "unconnected-(J9-Pin_2-Pad2)" "unconnected-(J9-Pin_3-Pad3)" "unconnected-(J9-Pin_22-Pad22)" "unconnected-(J9-Pin_21-Pad21)" "unconnected-(J9-Pin_4-Pad4)"
+    "unconnected-(J9-Pin_5-Pad5)" "unconnected-(J9-Pin_7-Pad7)" "unconnected-(J9-Pin_18-Pad18)" "unconnected-(J9-Pin_17-Pad17)" "unconnected-(J9-Pin_8-Pad8)" "unconnected-(J9-Pin_10-Pad10)" "unconnected-(J9-Pin_11-Pad11)" "unconnected-(J9-Pin_12-Pad12)"
+    "unconnected-(J9-Pin_13-Pad13)" "unconnected-(J9-Pin_14-Pad14)" "unconnected-(J9-Pin_15-Pad15)" "unconnected-(J9-Pin_16-Pad16)"
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
+    (rule
+      (width 150.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
